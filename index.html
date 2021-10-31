@@ -4,27 +4,27 @@
   
 <body onload="startTime()">
 
-<h1> Name is Asm Shariar Chowdhury and favorite hobby is biking. The current time: <i id ="txt" ></i> </h1>  
+<h1> Name is Asm Shariar Chowdhury and favorite hobby is cycling. The current time: <i id ="time" ></i> </h1>  
   
 <script>
 function startTime() {
-  const today = new Date();
-  let h = today.getHours();
-  let m = today.getMinutes();
-  let s = today.getSeconds();
-  h = checkTimeforhour(h);
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  const time = new Date();
+  let h = time.getHours();
+  let m = time.getMinutes();
+  let s = time.getSeconds();
+  h = formatHour(h);
+  m = formatTime(m);
+  s = formatTime(s);
+  document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
   setTimeout(startTime, 1000);
 }
 
-function checkTime(i) {
+function formatTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
-function checkTimeforhour(i) {
-  if (i > 12) {i = i-12};  // add zero in front of numbers < 12
+function formatHour(i) {
+  if (i > 12) {i = i-12};  // formats the hour for 12 hour format
   return i;
 }  
 </script>
